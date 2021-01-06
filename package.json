@@ -1,0 +1,23 @@
+{
+  "name": "main-application",
+  "version": "1.0.0",
+  "description": "Main application",
+  "main": "index.ts",
+  "author": "Yang",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "start": "node build/index.js",
+    "dev": "ts-node-dev index.ts",
+    "lint": "eslint --ext .ts ."
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
