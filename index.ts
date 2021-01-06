@@ -1,7 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
 import express from 'express';
+import morgan from 'morgan';
 
 const app = express();
+
+app.use(morgan('tiny'))
 const uuid = uuidv4();
 
 const resGeneration = () => `${new Date().toISOString()}: ${uuid}`;
