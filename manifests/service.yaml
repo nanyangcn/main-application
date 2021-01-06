@@ -8,5 +8,5 @@ spec:
     app: main-application 
   ports:
     - protocol: TCP
-      port: 2345 
-      targetPort: 3002 
+      port: 2346 
+      targetPort: 3001 

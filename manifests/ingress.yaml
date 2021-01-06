@@ -6,7 +6,17 @@ spec:
   rules:
   - http:
       paths:
-      - path: /
+      - pathType: Prefix
+        path: /
         backend:
-          serviceName: main-application-svc
-          servicePort: 2345
+          service: 
+            name: main-application-svc
+            port: 
+              number: 2346
+      - pathType: Prefix 
+        path: /pingpong
+        backend:
+          service: 
+            name: ping-pong-application-svc
+            port: 
+              number: 2347

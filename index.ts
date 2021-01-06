@@ -14,7 +14,7 @@ const logPrint = () => {
   setInterval(() => console.log(resGeneration()), 5000);
 };
 
-const PORT = 3002;
+const PORT = 3001;
 
 app.get('/', (_req, res) => {
   res.send(resGeneration());
