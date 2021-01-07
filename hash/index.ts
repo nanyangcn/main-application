@@ -14,7 +14,7 @@ const resGeneration = () => {
   let timestamp = 'YYYY-MM-DDThh:mm:ss.sssZ';
   timestamp = fs.readFileSync(`${PATH}/timestamp.txt`, 'utf8');
   const pingPong = fs.readFileSync(`${PATH}/ping-pong.txt`, 'utf8');
-  return `${timestamp}: ${uuid}\n${pingPong}`;
+  return `${timestamp}: ${uuid}<br/>${pingPong}`;
 };
   
 const logPrint = () => {
