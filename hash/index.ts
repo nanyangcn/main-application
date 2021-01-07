@@ -8,9 +8,11 @@ const app = express();
 app.use(morgan('tiny'));
 const uuid = uuidv4();
 
+const PATH = './files';
+
 const resGeneration = () => {
   let timestamp = 'YYYY-MM-DDThh:mm:ss.sssZ';
-  timestamp = fs.readFileSync('timestamp.txt', 'utf8');
+  timestamp = fs.readFileSync(`${PATH}/timestamp.txt`, 'utf8');
   return `${timestamp}: ${uuid}`;
 };
   
