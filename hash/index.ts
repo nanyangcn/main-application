@@ -8,12 +8,14 @@ const app = express();
 app.use(morgan('tiny'));
 const uuid = uuidv4();
 
-const PATH = './files';
+const timestampPath = './files';
+const pingpongPath = '/tmp/kub'
 
 const resGeneration = () => {
   let timestamp = 'YYYY-MM-DDThh:mm:ss.sssZ';
-  timestamp = fs.readFileSync(`${PATH}/timestamp.txt`, 'utf8');
-  return `${timestamp}: ${uuid}`;
+  timestamp = fs.readFileSync(`${timestampPath}/timestamp.txt`, 'utf8');
+  const pingpong = fs.readFileSync(`${pingpongPath}/ping-pong.txt`, 'utf8');
+  return `${timestamp}: ${uuid}\n${pingpong}`;
 };
   
 const logPrint = () => {
