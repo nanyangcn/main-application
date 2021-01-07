@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: main-application
+  name: main-application-dep
 spec:
   replicas: 1 
   selector:
@@ -12,6 +12,17 @@ spec:
       labels:
         app: main-application
     spec:
+      volumes:
+        - name: shared-image
+          emptyDir: {}
       containers:
-        - name: main-application
-          image: nanyangcn/main-application
+        - name: main-application-hash
+          image: nanyangcn/main-application-hash
+          volumeMounts:
+          - name: shared-image
+            mountPath: /usr/src/app/files
+        - name: main-application-timestamp
+          image: nanyangcn/main-application-timestamp
+          volumeMounts:
+          - name: shared-image
+            mountPath: /usr/src/app/files
