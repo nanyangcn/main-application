@@ -10,7 +10,7 @@ app.use(morgan('tiny'));
 const uuid = uuidv4();
 
 const PATH = './files';
-const pingUrl = 'http://ping-pong-application-svc:3002/inquire'; //'http://localhost:3002/inquire';
+const pingUrl = 'http://ping-pong-application-svc:2347/inquire'; //'http://localhost:3002/inquire';
 
 const resGeneration = async (): Promise<string> => {
   let timestamp = 'YYYY-MM-DDThh:mm:ss.sssZ';
