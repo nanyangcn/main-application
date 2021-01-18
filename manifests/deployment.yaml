@@ -19,7 +19,7 @@ spec:
             claimName: main-application-claim
         - name: config
           configMap:
-            name: main-application-configMap
+            name: main-application-configmap
       containers:
         - name: main-application-hash
           image: nanyangcn/main-application-hash

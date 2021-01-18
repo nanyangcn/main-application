@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import dotenv from 'dotenv';
 import express from 'express';
 import morgan from 'morgan';
 import fs from 'fs';
@@ -9,15 +10,19 @@ const app = express();
 app.use(morgan('tiny'));
 const uuid = uuidv4();
 
+dotenv.config({ path: './config/dotenv_file' });
+const MESSAGE = process.env.MESSAGE;
+
 const PATH = './files';
-const pingUrl = 'http://ping-pong-application-svc:2347/inquire'; //'http://localhost:3002/inquire';
+// const pingUrl = 'http://ping-pong-application-svc:2347/inquire';
+const pingUrl = 'http://localhost:3002/inquire';
 
 const resGeneration = async (): Promise<string> => {
   let timestamp = 'YYYY-MM-DDThh:mm:ss.sssZ';
   timestamp = fs.readFileSync(`${PATH}/timestamp.txt`, 'utf8');
   // const pingPong = fs.readFileSync(`${PATH}/ping-pong.txt`, 'utf8');
   const response = await axios.get<string>(pingUrl);
-  return `Hello<br/>${timestamp}: ${uuid}<br/>${response.data}`;
+  return `${MESSAGE}<br/>${timestamp}: ${uuid}<br/>${response.data}`;
 };
   
 const logPrint = async () => {
