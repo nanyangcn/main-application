@@ -17,7 +17,7 @@ const resGeneration = async (): Promise<string> => {
   timestamp = fs.readFileSync(`${PATH}/timestamp.txt`, 'utf8');
   // const pingPong = fs.readFileSync(`${PATH}/ping-pong.txt`, 'utf8');
   const response = await axios.get<string>(pingUrl);
-  return `${timestamp}: ${uuid}<br/>${response.data}`;
+  return `Hello<br/>${timestamp}: ${uuid}<br/>${response.data}`;
 };
   
 const logPrint = async () => {

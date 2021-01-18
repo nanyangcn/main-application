@@ -17,12 +17,17 @@ spec:
         - name: shared-image
           persistentVolumeClaim:
             claimName: main-application-claim
+        - name: config
+          configMap:
+            name: main-application-configMap
       containers:
         - name: main-application-hash
           image: nanyangcn/main-application-hash
           volumeMounts:
           - name: shared-image
             mountPath: /usr/src/app/files
+          - name: config
+            mountPath: /usr/src/app/config
         - name: main-application-timestamp
           image: nanyangcn/main-application-timestamp
           volumeMounts:
