@@ -14,8 +14,8 @@ dotenv.config({ path: './config/dotenv_file' });
 const MESSAGE = process.env.MESSAGE;
 
 const PATH = './files';
-// const pingUrl = 'http://ping-pong-application-svc:2347/inquire';
-const pingUrl = 'http://localhost:3002/inquire';
+const pingUrl = 'http://ping-pong-application-svc:2347/inquire';
+// const pingUrl = 'http://localhost:3002/inquire';
 
 const resGeneration = async (): Promise<string> => {
   let timestamp = 'YYYY-MM-DDThh:mm:ss.sssZ';
