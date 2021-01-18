@@ -1,6 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  namespace: main-application-namespace
   name: main-application-ing
   annotations:
     traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
