@@ -4,9 +4,8 @@ metadata:
   namespace: main-application-namespace
   name: main-application-claim
 spec:
-  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
+      storage: 100Mi
