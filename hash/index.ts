@@ -12,9 +12,10 @@ const uuid = uuidv4();
 
 dotenv.config({ path: './config/dotenv_file' });
 const MESSAGE = process.env.MESSAGE;
+const PINGPONG_PORT = process.env.PINGPONG_PORT;
 
 const PATH = './files';
-const pingUrl = 'http://ping-pong-application-svc:2347/inquire';
+const pingUrl = `http://ping-pong-application-svc:${PINGPONG_PORT}/inquire`;
 // const pingUrl = 'http://localhost:3002/inquire';
 
 const resGeneration = async (): Promise<string> => {

@@ -5,4 +5,5 @@ metadata:
   name: main-application-configmap
 data:
   dotenv_file: |
-    MESSAGE=Hello 
+    MESSAGE=Hello
+    PINGPONG_PORT=80

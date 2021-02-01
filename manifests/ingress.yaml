@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   namespace: main-application-namespace
@@ -7,17 +7,12 @@ spec:
   rules:
   - http:
       paths:
-      - pathType: Prefix
-        path: /
+      - path: /
         backend:
-          service: 
-            name: main-application-svc
-            port: 
-              number: 2346
-      - pathType: Prefix 
-        path: /pingpong
+          serviceName: main-application-svc
+          servicePort: 2346
+      - path: /pingpong
         backend:
-          service: 
-            name: ping-pong-application-svc
-            port: 
-              number: 2347
+          serviceName: ping-pong-application-svc
+          servicePort: 80
+          
