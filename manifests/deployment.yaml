@@ -23,6 +23,10 @@ spec:
       containers:
         - name: main-application-hash
           image: nanyangcn/main-application-hash
+          resources:
+            limits:
+              cpu: "150m"
+              memory: "300Mi"
           volumeMounts:
           - name: shared-image
             mountPath: /usr/src/app/files
@@ -30,6 +34,10 @@ spec:
             mountPath: /usr/src/app/config
         - name: main-application-timestamp
           image: nanyangcn/main-application-timestamp
+          resources:
+            limits:
+              cpu: "150m"
+              memory: "300Mi"
           volumeMounts:
           - name: shared-image
             mountPath: /usr/src/app/files
