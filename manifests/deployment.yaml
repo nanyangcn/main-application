@@ -32,6 +32,12 @@ spec:
             mountPath: /usr/src/app/files
           - name: config
             mountPath: /usr/src/app/config
+          readinessProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            httpGet:
+              path: /
+              port: 3001
         - name: main-application-timestamp
           image: nanyangcn/main-application-timestamp
           resources:
