@@ -25,7 +25,7 @@ spec:
           image: nanyangcn/main-application-hash
           resources:
             limits:
-              cpu: "150m"
+              cpu: "50m"
               memory: "300Mi"
           volumeMounts:
           - name: shared-image
@@ -42,7 +42,7 @@ spec:
           image: nanyangcn/main-application-timestamp
           resources:
             limits:
-              cpu: "150m"
+              cpu: "50m"
               memory: "300Mi"
           volumeMounts:
           - name: shared-image
